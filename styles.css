@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #c8102e;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.header {
+  margin-bottom: 1rem;
+}
+
+.title {
+  color: #fcbb25;
+  font-family: "Gamja Flower", sans-serif;
+  font-size: 4rem;
+  text-align: center;
+}
+
+.subtitle {
+  color: #fff;
+  font-family: "Gamja Flower", sans-serif;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.container {
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 480px;
+  height: 480px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.grid-square {
+  border: 1px solid #000;
+}
+
+.options {
+  background-color: #d2b48c;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding: 1rem;
+  border: 0.25rem solid #8b5e3c;
+  border-radius: 1rem;
+}
+
+.btn-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.btn {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: auto;
+  padding: 1rem;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  font-family: "Gamja Flower", sans-serif;
+  font-size: 1.75rem;
+  cursor: pointer;
+}
+
+.pen-btn:hover,
+.rainbow-btn:hover,
+.eraser-btn:hover,
+.reset-btn:hover {
+  color: #654321;
+}
+
+.slider-row {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider {
+  cursor: pointer;
+}
+
+/* .pen-btn:hover {
+}
+
+.rainbow-btn:hover {
+  background: linear-gradient(
+    90deg,
+    #ffadad,
+    #ffd6a5,
+    #fdffb6,
+    #caffbf,
+    #9bf6ff,
+    #bdb2ff,
+    #ffc6ff
+  );
+}
+
+.eraser-btn:hover {
+  background: #f5a19d;
+}
+
+.reset-btn:hover {
+  background: red;
+} */
+
+.slider-row .slider-value {
+  color: #fff;
+  font-family: "Gamja Flower", sans-serif;
+  font-size: 1.5rem;
+}
