@@ -3,6 +3,7 @@ const penBtn = document.querySelector(".pen-btn");
 const rainbowBtn = document.querySelector(".rainbow-btn");
 const eraserBtn = document.querySelector(".eraser-btn");
 const resetBtn = document.querySelector(".reset-btn");
+const colorPicker = document.querySelector(".color-picker-input");
 const slider = document.querySelector(".slider");
 const sliderValue = document.querySelector(".slider-value");
 
@@ -39,6 +40,8 @@ function handleOption() {
       return setRandomColor();
     case "eraser":
       return setEraser();
+    case "pickColor":
+      return setPickedColor();
     default:
       return setPenColor();
   }
@@ -49,11 +52,20 @@ function setPenColor() {
 }
 
 function setRandomColor() {
-  return "#" + Math.floor(Math.random() * 16777216).toString(16);
+  return (
+    "#" +
+    Math.floor(Math.random() * 16777216)
+      .toString(16)
+      .padStart(6, "0")
+  );
 }
 
 function setEraser() {
   return "#fff";
+}
+
+function setPickedColor() {
+  return colorPicker.value;
 }
 
 function resetGrid() {
@@ -78,8 +90,11 @@ eraserBtn.addEventListener("click", () => {
 
 resetBtn.addEventListener("click", resetGrid);
 
+colorPicker.addEventListener("input", () => {
+  option = "pickColor";
+});
+
 slider.addEventListener("input", () => {
   gridSize = slider.value;
-  sliderValue.textContent = `${gridSize} x ${gridSize}`;
   createGrid();
 });

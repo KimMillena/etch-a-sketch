@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap");
 
+:root {
+  --bg-color: #c8102e;
+}
+
 * {
   font-family: "Gamja Flower", sans-serif;
   margin: 0;
@@ -8,7 +12,7 @@
 }
 
 body {
-  background-color: #c8102e;
+  background-color: var(--bg-color);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -58,8 +62,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin: 2rem 0 2rem 0;
   padding: 1rem;
   border: 0.25rem solid #8b5e3c;
   border-radius: 1rem;
@@ -68,7 +71,6 @@ body {
 .btn-row {
   display: flex;
   gap: 1rem;
-  margin-bottom: 1rem;
 }
 
 .btn {
@@ -114,11 +116,23 @@ body {
   font-weight: bold;
 }
 
+.color-picker {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.color-picker-text {
+  color: #fff;
+  font-size: 1.5rem;
+}
+
 .slider-row {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 1rem;
 }
 
 .slider {
