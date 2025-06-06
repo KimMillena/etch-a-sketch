@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap");
 
 * {
+  font-family: "Gamja Flower", sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -21,19 +22,17 @@ body {
 
 .title {
   color: #fcbb25;
-  font-family: "Gamja Flower", sans-serif;
   font-size: 4rem;
   text-align: center;
 }
 
 .subtitle {
   color: #fff;
-  font-family: "Gamja Flower", sans-serif;
   font-size: 1.5rem;
   text-align: center;
 }
 
-.container {
+.canvas {
   background-color: #fff;
   display: flex;
   justify-content: center;
@@ -49,7 +48,7 @@ body {
 }
 
 .grid-square {
-  border: 1px solid #000;
+  border: 1px solid #d2b48c;
 }
 
 .options {
@@ -60,6 +59,7 @@ body {
   align-items: center;
   gap: 1rem;
   margin-top: 2rem;
+  margin-bottom: 2rem;
   padding: 1rem;
   border: 0.25rem solid #8b5e3c;
   border-radius: 1rem;
@@ -82,8 +82,7 @@ body {
   background: transparent;
   border: none;
   border-radius: 8px;
-  font-family: "Gamja Flower", sans-serif;
-  font-size: 1.75rem;
+  font-size: 2rem;
   cursor: pointer;
 }
 
@@ -92,6 +91,27 @@ body {
 .eraser-btn:hover,
 .reset-btn:hover {
   color: #654321;
+}
+
+/* .pen-btn:hover {
+  color: #333;
+} */
+
+.rainbow-btn:hover {
+  background: linear-gradient(
+    90deg,
+    #ff0057,
+    #ff7b00,
+    #ffee00,
+    #00ff85,
+    #00cfff,
+    #9000ff,
+    #ff00c8
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: bold;
 }
 
 .slider-row {
@@ -105,32 +125,7 @@ body {
   cursor: pointer;
 }
 
-/* .pen-btn:hover {
-}
-
-.rainbow-btn:hover {
-  background: linear-gradient(
-    90deg,
-    #ffadad,
-    #ffd6a5,
-    #fdffb6,
-    #caffbf,
-    #9bf6ff,
-    #bdb2ff,
-    #ffc6ff
-  );
-}
-
-.eraser-btn:hover {
-  background: #f5a19d;
-}
-
-.reset-btn:hover {
-  background: red;
-} */
-
 .slider-row .slider-value {
   color: #fff;
-  font-family: "Gamja Flower", sans-serif;
   font-size: 1.5rem;
 }

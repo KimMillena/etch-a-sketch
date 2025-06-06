@@ -1,4 +1,4 @@
-const container = document.querySelector(".container");
+const canvas = document.querySelector(".canvas");
 const penBtn = document.querySelector(".pen-btn");
 const rainbowBtn = document.querySelector(".rainbow-btn");
 const eraserBtn = document.querySelector(".eraser-btn");
@@ -6,15 +6,16 @@ const resetBtn = document.querySelector(".reset-btn");
 const slider = document.querySelector(".slider");
 const sliderValue = document.querySelector(".slider-value");
 
+const CANVAS_SIZE = 480;
 let gridSize = slider.value;
 let option = "pen";
 
-sliderValue.textContent = `${gridSize} x ${gridSize}`;
+createGrid();
 
 function createGrid() {
-  container.innerHTML = "";
+  canvas.innerHTML = "";
 
-  const squareSize = 480 / gridSize;
+  const squareSize = CANVAS_SIZE / gridSize;
 
   for (let i = 0; i < gridSize * gridSize; i++) {
     const div = document.createElement("div");
@@ -23,33 +24,35 @@ function createGrid() {
     div.style.height = `${squareSize}px`;
 
     div.addEventListener("mouseover", () => {
-      div.style.backgroundColor = handleEvent();
+      div.style.backgroundColor = handleOption();
     });
-    container.appendChild(div);
+    canvas.appendChild(div);
+  }
+  sliderValue.textContent = `${gridSize} x ${gridSize}`;
+}
+
+function handleOption() {
+  switch (option) {
+    case "pen":
+      return setPenColor();
+    case "rainbow":
+      return setRandomColor();
+    case "eraser":
+      return setEraser();
+    default:
+      return setPenColor();
   }
 }
 
-function handleEvent() {
-  if (option === "pen") {
-    return getPenColor();
-  } else if (option === "rainbow") {
-    return getRandomColor();
-  } else if (option === "eraser") {
-    return eraser();
-  } else {
-    return getPenColor();
-  }
-}
-
-function getPenColor() {
+function setPenColor() {
   return "#000";
 }
 
-function getRandomColor() {
+function setRandomColor() {
   return "#" + Math.floor(Math.random() * 16777216).toString(16);
 }
 
-function eraser() {
+function setEraser() {
   return "#fff";
 }
 
@@ -80,5 +83,3 @@ slider.addEventListener("input", () => {
   sliderValue.textContent = `${gridSize} x ${gridSize}`;
   createGrid();
 });
-
-createGrid();
