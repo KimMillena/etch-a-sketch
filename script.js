@@ -88,11 +88,11 @@ eraserBtn.addEventListener("click", () => {
   option = "eraser";
 });
 
-resetBtn.addEventListener("click", resetGrid);
-
 colorPicker.addEventListener("input", () => {
   option = "pickColor";
 });
+
+resetBtn.addEventListener("click", resetGrid);
 
 slider.addEventListener("input", () => {
   gridSize = slider.value;
