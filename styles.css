@@ -1,7 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap");
 
 :root {
+  /* BACKGROUND COLOR */
   --bg-color: #c8102e;
+
+  --white-color: #fff;
+
+  /* BROWN COLORS */
+  --light-brown: #d2b48c;
+  --medium-brown: #8b5e3c;
+  --dark-brown: #654321;
 }
 
 * {
@@ -33,7 +41,7 @@ body {
 }
 
 .subtitle {
-  color: #fff;
+  color: var(--white-color);
   font-size: 1.5rem;
   text-align: center;
 }
@@ -41,7 +49,7 @@ body {
 /* CANVAS STYLINGS */
 
 .canvas {
-  background-color: #fff;
+  background-color: var(--white-color);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -50,19 +58,14 @@ body {
   height: 480px;
 }
 
-.row {
-  display: flex;
-  flex-direction: row;
-}
-
 .grid-square {
-  border: 1px solid #d2b48c;
+  border: 1px solid var(--light-brown);
 }
 
 /* OPTIONS STYLINGS */
 
 .options {
-  background-color: #d2b48c;
+  background-color: var(--light-brown);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -70,7 +73,7 @@ body {
   gap: 1rem;
   margin: 2rem 0 2rem 0;
   padding: 1rem;
-  border: 0.25rem solid #8b5e3c;
+  border: 0.25rem solid var(--medium-brown);
   border-radius: 1rem;
 }
 
@@ -80,7 +83,7 @@ body {
 }
 
 .btn {
-  color: #fff;
+  color: var(--white-color);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -95,10 +98,9 @@ body {
 }
 
 .pen-btn:hover,
-.rainbow-btn:hover,
 .eraser-btn:hover,
 .reset-btn:hover {
-  color: #654321;
+  color: var(--dark-brown);
 }
 
 .rainbow-btn:hover {
@@ -120,12 +122,13 @@ body {
 
 .color-picker {
   display: flex;
+  align-items: center;
   gap: 1rem;
   margin-bottom: 1rem;
 }
 
 .color-picker-text {
-  color: #fff;
+  color: var(--white-color);
   font-size: 1.5rem;
 }
 
@@ -154,7 +157,7 @@ body {
   appearance: none;
   width: 1.25rem;
   height: 1.25rem;
-  background: #654321;
+  background: var(--dark-brown);
   border-radius: 50%;
 }
 
@@ -164,11 +167,11 @@ body {
   appearance: none;
   width: 1.25rem;
   height: 1.25rem;
-  background: #654321;
+  background: var(--dark-brown);
   border-radius: 50%;
 }
 
 .slider-value {
-  color: #fff;
+  color: var(--white-color);
   font-size: 1.5rem;
 }

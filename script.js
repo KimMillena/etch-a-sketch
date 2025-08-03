@@ -1,8 +1,5 @@
 const canvas = document.querySelector(".canvas");
-const penBtn = document.querySelector(".pen-btn");
-const rainbowBtn = document.querySelector(".rainbow-btn");
-const eraserBtn = document.querySelector(".eraser-btn");
-const resetBtn = document.querySelector(".reset-btn");
+const buttons = document.querySelectorAll("button");
 const colorPicker = document.querySelector(".color-picker-input");
 const slider = document.querySelector(".slider");
 const sliderValue = document.querySelector(".slider-value");
@@ -10,8 +7,6 @@ const sliderValue = document.querySelector(".slider-value");
 const CANVAS_SIZE = 480;
 let gridSize = slider.value;
 let option = "pen";
-
-createGrid();
 
 function createGrid() {
   canvas.innerHTML = "";
@@ -27,6 +22,7 @@ function createGrid() {
     div.addEventListener("mouseover", () => {
       div.style.backgroundColor = handleOption();
     });
+
     canvas.appendChild(div);
   }
   sliderValue.textContent = `${gridSize} x ${gridSize}`;
@@ -69,32 +65,31 @@ function setPickedColor() {
 }
 
 function resetGrid() {
-  const gridSquare = document.querySelectorAll(".grid-square");
-  gridSquare.forEach((square) => (square.style.backgroundColor = "#fff"));
   if (option === "eraser") {
     option = "pen";
   }
+
+  const gridSquare = document.querySelectorAll(".grid-square");
+  gridSquare.forEach((square) => (square.style.backgroundColor = "#fff"));
 }
 
-penBtn.addEventListener("click", () => {
-  option = "pen";
-});
-
-rainbowBtn.addEventListener("click", () => {
-  option = "rainbow";
-});
-
-eraserBtn.addEventListener("click", () => {
-  option = "eraser";
+buttons.forEach((button) => {
+  button.addEventListener("click", () => {
+    if (button.value === "reset") {
+      resetGrid();
+    } else {
+      option = button.value;
+    }
+  });
 });
 
 colorPicker.addEventListener("input", () => {
   option = "pickColor";
 });
 
-resetBtn.addEventListener("click", resetGrid);
-
 slider.addEventListener("input", () => {
   gridSize = slider.value;
   createGrid();
 });
+
+createGrid();
